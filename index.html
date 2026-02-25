@@ -175,7 +175,7 @@
 
         // The Engine
         function calculateNgau() {
-            if (selectedCards.every(c => ['10', 'J', 'Q', 'K'].includes(c))) {
+            if (selectedCards.every(c => ['J', 'Q', 'K'].includes(c))) {
                 showResult("五公 (Five Dukes)", '#30d158'); return;
             }
 
@@ -189,7 +189,7 @@
             let allPointCombos = generateCombos(variations);
             
             let bestScore = -1;
-            let bestName = "破柴 (No Ox)";
+            let bestName = "没牛 (No Ox)";
             const indices = [[0,1,2], [0,1,3], [0,1,4], [0,2,3], [0,2,4], [0,3,4], [1,2,3], [1,2,4], [1,3,4], [2,3,4]];
 
             for (let pointSet of allPointCombos) {
@@ -216,7 +216,7 @@
             // Ngau Ton Ku: MUST be specifically the ♠A + a Picture Card
             let hasSpadesAce = (c1 === '♠A' || c2 === '♠A');
             let hasPic = ['J','Q','K'].includes(c1) || ['J','Q','K'].includes(c2);
-            if (hasSpadesAce && hasPic) return {score: 500, name: "牛吞牯 (Ngau Ton Ku)"};
+            if (hasSpadesAce && hasPic) return {score: 500, name: "牛冬菇 (Ngau Tong Ku)"};
 
             // Ma (Double): Handle normal pairs, and group ♠A with A together as a pair
             let isC1Ace = (c1 === '♠A' || c1 === 'A');
